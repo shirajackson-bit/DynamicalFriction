@@ -1,0 +1,100 @@
+%----  Relevant files 
+InitCondFile        /Users/shira/Documents/GitHub/DynamicalFriction/Test_Examples/StableMilkyWay/IC
+OutputDir           ./output
+SnapshotFileBase    snapshot
+
+%This specifies the name of a file that contains a list of desired output times. If OutputListOn is set to 1, this list will determine the times when snapshot- files are desired. The file given by OutputListFilename should just contain the floating point values of the desired output times in plain ASCII format. The times do not have to be ordered in time, but there may be at most 1100 values (this is the default, but it can be enlarged if desired by setting the MAXLEN_OUTPUTLIST contant in Config.sh). Output times that are in the past relative to the current simulation time will always be ignored.
+
+OutputListFilename  empty.txt 
+
+
+%---- File formats
+ICFormat           3
+SnapFormat         3 
+
+----
+
+
+
+%---- CPU-time limits
+TimeLimitCPU              180000  % in seconds
+CpuTimeBetRestartFile     7200    % in seconds
+
+----
+
+
+
+%----- Memory alloction
+MaxMemSize        2300
+
+
+----
+
+
+
+%---- Caracteristics of run
+TimeBegin           0.0        % Begin of the simulation
+TimeMax	            3.0        % End of the simulation
+
+----
+
+
+
+%---- Basic code options that set the type of simulation
+ComovingIntegrationOn    0
+
+----
+
+
+%---- Cosmological parameters
+BoxSize               10000.0
+
+----
+
+
+%---- Output frequency and output parameters
+OutputListOn              0 
+TimeBetSnapshot           0.2
+TimeOfFirstSnapshot       0.0
+TimeBetStatistics         0.05
+
+% this writes how many files per snapshot, but snapshot file tells what output options should go into those files
+NumFilesPerSnapshot       1
+
+MaxFilesWithConcurrentIO  1 
+
+----
+
+
+%---- Accuracy of time integration
+ErrTolIntAccuracy        0.025 
+CourantFac               0.15
+MaxSizeTimestep          0.02
+MinSizeTimestep          0.0 
+
+%---- Tree algorithm, force accuracy, domain update frequency
+TypeOfOpeningCriterion                1
+ErrTolTheta                           0.5
+ErrTolThetaMax                        0.9
+ErrTolForceAcc                        0.005
+TopNodeFactor                         2.5
+
+ActivePartFracForNewDomainDecomp      0.01
+ 
+%---- Initial density estimate
+DesNumNgb              64
+MaxNumNgbDeviation     1 
+
+%---- System of units
+UnitLength_in_cm         3.085678e21
+UnitMass_in_g            1.989e43
+UnitVelocity_in_cm_per_s 1.0e5
+GravityConstantInternal  0
+
+
+%---- Gravitational softening length
+SofteningComovingClass0     0.04
+SofteningMaxPhysClass0      0.04
+SofteningClassOfPartType0    0
+
+
