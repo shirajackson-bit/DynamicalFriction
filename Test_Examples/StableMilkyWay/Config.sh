@@ -8,7 +8,7 @@
 #--------------------------------------- Basic operation mode of code
 
 PERIODIC                                     # enables periodic boundary condistions
-NTYPES=3                                     # number of particle types
+NTYPES=1                                    # number of particle types
 #GADGET2_HEADER                               # allows reading of snapshots with GADGET-2/3 header format 
 
 
